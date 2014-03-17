@@ -1,0 +1,66 @@
+import java.util.Scanner;
+class BangunRuang{
+	Scanner inp = new Scanner(System.in);
+
+public static void main(String[] awds){
+	BangunRuang br = new BangunRuang();
+	br.runThis();
+}
+
+void menu(){
+	System.out.println("Menu Bangun Ruang");
+	System.out.println("1. Balok");
+	System.out.println("2. Kubus");
+	System.out.println("3. Keluar");
+	}
+void runThis(){
+	menu();
+	System.out.print("Inputan anda : ");
+	int pilihan = inp.nextInt();
+	
+	switch (pilihan){
+		case 1 : 
+			balok();
+			break;
+		case 2 : 
+			kubus();
+			break;
+		case 3 : 
+			System.out.println("Keluar aplikasi");
+			break;
+		default : System.out.println("Pilihan tidak ditemukan");
+		} //punya switch
+} //punya runThis
+
+void kubus(){
+			System.out.println("Kubus");
+			System.out.print("Sisi : ");
+			int sisi = inp.nextInt();		
+			int luas =  hitungLuasBalok(sisi, sisi, sisi);
+			int volume =  hitungVolumeBalok(sisi, sisi, sisi);
+			System.out.println("Volume = "+volume);
+			System.out.println("Luas = "+luas);
+	}
+void balok(){
+			System.out.println("Balok");
+			System.out.print("Panjang : ");
+			int panjang = inp.nextInt();		
+			System.out.print("Lebar   : ");
+			int lebar = inp.nextInt();		
+			System.out.print("Tinggi  : ");
+			int tinggi= inp.nextInt();		
+			int luas =  hitungLuasBalok(panjang, lebar, tinggi);
+			int volume =  hitungVolumeBalok(panjang, lebar, tinggi);
+			System.out.println("Volume = "+volume);
+			System.out.println("Luas = "+luas);
+	} //punya balok()
+
+int hitungVolumeBalok(int panjang, int l, int t){
+			int volume = panjang * l * t;
+			return volume;
+	}
+int hitungLuasBalok(int panjang, int l, int t){
+			int luas = (2 * panjang * l) +(2 * panjang * t) +(2 * t * l);
+			return luas;
+	}
+} //punya class
